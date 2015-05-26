@@ -28,20 +28,21 @@ function custMap(list, callback) {
 // })
 
 
-function custReduce(list, callback) {
-  initValue = list[0];
-  forEach(list, callback);
-  var initValue = callback(initValue, list[1 + i]);
-  return initValue;
-}
+// function custReduce(list, callback) {
+//   initValue = li;
+//   forEach(list, callback);
+//   var initValue = callback(initValue, list[1 + i]);
+//   return initValue;
+// }
 
 
 function custFilter(list, callback) {
   var outputArray = [];
-  forEach(list, callback);
-  if (callback(list[i]) == true) {
-  outputArray.push(list[i]);
-  }
+  forEach(list, function (li) {
+    if (callback(li) == true) {
+      outputArray.push(li);
+    }
+  });
   return outputArray;
 }
 
