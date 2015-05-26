@@ -6,10 +6,44 @@
 
 // 1. Write your own forEach function. It takes the array and the function (referred to as a callback) as arguments:
 
-function forEach(list, callback) { /* Do stuff */ }
-
+function forEach(list, callback) {
+  for (var i = 0; i < list.length; i++) {
+    callback(list[i]);
+  }
+}
 
 // 2. Write your own map, reduce, and filter functions that use your custom forEach to do their work.
+
+function custMap(list, callback) {
+  var outputArray = [];
+  forEach(list, function (li) {
+    outputArray.push(callback(li));
+  });
+  return outputArray;
+}
+
+// var names = ['Tim', 'Vi', 'Meade'];
+// var coolness = custMap(names, function (name) {
+//   return name + " is cool";
+// })
+
+
+function custReduce(list, callback) {
+  initValue = list[0];
+  forEach(list, callback);
+  var initValue = callback(initValue, list[1 + i]);
+  return initValue;
+}
+
+
+function custFilter(list, callback) {
+  var outputArray = [];
+  forEach(list, callback);
+  if (callback(list[i]) == true) {
+  outputArray.push(list[i]);
+  }
+  return outputArray;
+}
 
 
 //////////////////////////////////////////////////
