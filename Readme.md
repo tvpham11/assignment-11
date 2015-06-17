@@ -1,1 +1,1 @@
-## I am a Readme.... you should probably update me!
+## Pair programming assignment to solve exercises in main.js
